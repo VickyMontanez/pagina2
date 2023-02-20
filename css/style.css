@@ -5,8 +5,8 @@
 }
 .navigation{
     display: grid;
-    justify-content: space-between;
     padding: 20px;
+    grid-template-columns: auto auto auto;
 }
 .container-fluid{
     display: grid;
@@ -16,6 +16,8 @@
     display: grid;
     gap: 5px;
     justify-content: end;
+    grid-row: 1;
+    grid-column: 6;
 }
 a {
     text-decoration: none; 
@@ -27,14 +29,33 @@ li {
     gap: 1em;
 }
 
-
 section{
     width: 50%;
-
 }
 
 .img img{
     width: 90%;
+}
+
+h1{
+    padding: 50px 20px;
+    width: 60px;
+}
+
+.descripcion p {
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.opciones input{
+
+}
+
+.opciones button{
+    position: absolute;
+    right: 10px;
+    margin-right: 70px;
 }
 
 aside{
