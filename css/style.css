@@ -3,6 +3,19 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family:"Kamehaya" ;
+    src: url(../fonts/Kamehaya\ Bintang.ttf);
+}
+
+@font-face {
+    font-family: "Elegance" ;
+    src: url(../fonts/Rounded_Elegance.ttf);
+}
+
+body{
+    background-image: url(../img/fondo.jpg);
+}
 .container{
     margin: 0 auto;
     width: 90%;
@@ -12,7 +25,7 @@
     --state-close: scale(0);
     --state-hamburguer:scale(1);
     --state-menu:translate(-100%);
-    padding: 40px 0;
+    padding: 10px 0;
     display: grid;
     justify-content: space-between;
     align-items: center;
@@ -23,23 +36,23 @@
     --state-close: scale(1);
     --state-hamburguer: scale(0);
 }
-.nav_titulo h2{
+
+#titulo{
+    font-family: "Kamehaya";
     font-size: 2.5rem;
 }
 .nav_links{
-    background-color: #F5EAEA;
+    background-color:rgb(128, 145, 161);
     position: absolute;
     top:0;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 0;
-
     display: grid;
     align-content: center;
     gap: 2em;
     padding-left: 5%;
-
     transform: var(--state-menu);
     transition: .4s transform;
 } 
@@ -74,6 +87,10 @@ li {
     gap: 1em;
 }
 
+.nav_item:hover{
+    background-color: rgb(165, 116, 69) ;
+}
+
 @media (min-width:768px){
     .nav{
         --state-hamburguer:scale(0);
@@ -94,31 +111,139 @@ li {
         grid-row: 1/2;
 
     } 
+    .nav_item:hover{
+        background-color: rgb(165, 116, 69) ;
+    }
 }
 
 .contenido{
     display:grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+
 }
 .img{
     grid-column: 1/2;
     grid-row: 1/6;
-    background-color: aqua;
 }
 
 .img img{
-    width: 90%;
+    width: 50%;
+    padding: 40px;
+    margin-left: 40px;
+    position: absolute;
+    top: 25%;
+    z-index: -1;
+
 }
 
+aside{
+    z-index:-1;
+}
+
+@media (min-width:768px) {
+    .img img{
+        width: 40%;
+        padding: 50px;
+        margin-left: 60px;
+        position: absolute;
+        top: 10%;}
+    .producto{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    aside{
+        position: absolute;
+        width: 50%;
+        right:40px;
+    }
+}
 .titulo{
     grid-column: 2/3;
     grid-row: 1/3;
-    background-color: blueviolet;
+    margin: 30px;
+}
+
+#titulo-des{
+    text-align: center;
+    font-family: "Kamehaya";
+    font-size: 2rem;
 }
 
 .descripcion{
     grid-column: 2/3;
     grid-row: 3/5;
+    margin: 30px;
+}
 
+.descripcion p {
+    font-family: "Elegance";
+}
+.opciones{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 5/6;
+    margin: 30px;
+    grid-auto-flow: column;
+}
+
+input{
+    width: 10px;
+    justify-content: flex-start;
+}
+
+button{
+    background-color: rgb(128, 145, 161);
+    border: collapse;
+    padding: 10px;
+    font-family: "Kamehaya";
+    justify-content: flex-end;
+}
+
+.pie-pagina{
+    width: 100%;
+    background-color: rgb(165, 116, 69);
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+}
+.pie-pagina .grupo1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding:0px 0px;
+}
+
+.pie-pagina .grupo1 .box h2{
+    color:black;
+    font-family: "Kamehaya";
+    font-size: 20px;
+    text-align: center;
+}
+.pie-pagina .grupo1 .box p{
+    color: black;
+    font-family: "Elegance";
+    font-size: 12px;
+    text-align: center;
+}
+.pie-pagina .grupo1 .social{
+    text-align: center;
+}
+
+.pie-pagina .grupo1 .social a{
+    display: inline-block;
+    width:25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: end;
+}
+
+
+.pie-pagina .grupo2{
+    background-color: rgb(80, 77, 77);
+    padding: 5px 2px;
+    text-align: center;
+    color:black;
 }
